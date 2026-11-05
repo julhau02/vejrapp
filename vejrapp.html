@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MitVejr</title>
+  <link rel="stylesheet" href="vejrapp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Header-->
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="vejrapp.html" aria-label="MitVejr hjem">
+        <span class="brand-icon">☁</span>
+        <span class="brand-name">MitVejr</span>
+      </a>
+
+    <!--Søgning i header-->
+
+      <label class="search">
+        <span class="search-symbol" aria-hidden="true">⌕</span>
+        <input id="city-search" type="search" placeholder="Søg efter en by">
+      </label>
+
+    <!--Log ind knap i header-->
+
+      <a class="login-button" href="logind.html">Log ind</a>
+    </div>
+  </header>
+
+    <!--Hovedindhold-->
+
+  <main class="page">
+    <section class="grid">
+      <article class="hero">
+        <div class="hero-content">
+          <div>
+            <div class="location" id="location">● København</div>
+            <p class="region" id="region">Henter vejrdata ...</p>
+          </div>
+
+          <div class="hero-weather">
+            <div>
+              <p class="temperature" id="temperature">—</p>
+              <p class="condition" id="condition">Henter vejrdata ...</p>
+              <p>H: <span id="max-temperature">—</span> · L: <span id="min-temperature">—</span></p>
+              <p class="region">Føles som <span id="feels-like">—</span></p>
+              <div class="outfit-suggestion" aria-live="polite">
+                <p class="outfit-label">Tøjvalg efter vejret</p>
+                <p class="outfit-title" id="outfit-title">Henter forslag ...</p>
+                <p class="outfit-description" id="outfit-description"></p>
+              </div>
+            </div>
+
+            <div class="weather-symbol" id="weather-symbol" aria-label="Vejret indlæses">…</div>
+          </div>
+        </div>
+      </article>
+
+      <!--time for time-->
+
+      <article class="card">
+        <p class="eyebrow">Prognose hver 3. time</p>
+        <h2 class="section-title">Næste prognosetidspunkter</h2>
+
+        <div class="hourly" id="hourly-forecast" aria-live="polite"></div>
+
+        <!--Note til brugere-->
+
+        <div class="notice">
+          <strong id="notice-title">Vejrstatus</strong>
+          <span id="notice-text">Henter prognosen ...</span>
+        </div>
+      </article>
+    </section>
+
+    <!--Log ind for tøjforslag-->
+
+    <section class="clothing">
+      <div class="clothing-text">
+        <span class="clothing-icon">☁</span>
+
+        <div>
+          <p class="eyebrow">Dagens tøjforslag</p>
+          <h2>Klar til vejret?</h2>
+          <p>
+            Log ind, og få et personligt tøjforslag tilpasset temperaturen
+            og hvor let du fryser.
+          </p>
+        </div>
+      </div>
+
+      <a class="primary-button" href="logind.html">
+        Log ind og se forslag
+      </a>
+    </section>
+
+    <!--7-dages vejrudsigt-->
+
+    <section class="grid forecast-grid">
+      <article class="card">
+        <p class="eyebrow">Ugen der kommer</p>
+        <h2 class="section-title">5-dages vejrudsigt</h2>
+
+        <div class="forecast-list" id="daily-forecast" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <!--Footer-->
+
+    <footer class="footer">
+      <span>Vejrdata og bysøgning via <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.</span>
+      <span id="updated-at">Vejrdata indlæses ...</span>
+      <span>Host: <a href="http://127.0.0.1:3000/">127.0.0.1</a> · Port: 3000</span>
+    </footer>
+  </main>
+
+  <script src="vejrapp.js"></script>
+
+</body>
+</html>

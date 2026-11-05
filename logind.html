@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log ind på MitVejr.">
+  <title>Log ind – MitVejr</title>
+
+    <!--links til skrifttyper og CSS-->
+
+  <link rel="stylesheet" href="vejrapp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--header-->
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="vejrapp.html" aria-label="MitVejr hjem">
+        <span class="brand-icon" aria-hidden="true">☁</span>
+        <span class="brand-name">MitVejr</span>
+      </a>
+      <a class="login-button login-back" href="vejrapp.html">Tilbage til vejret</a>
+    </div>
+  </header>
+
+  <!--log ind-formular-->
+
+  <main class="login-page">
+    <section class="card login-card">
+      <p class="eyebrow">Velkommen tilbage</p>
+      <h1 class="section-title">Log ind på MitVejr</h1>
+      <p class="login-description">Log ind for at få personlige tøjforslag til vejret.</p>
+
+      <form class="login-form">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="dig@eksempel.dk" required>
+
+        <label for="password">Adgangskode</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Din adgangskode" required>
+
+        <button class="primary-button" type="submit">Log ind</button>
+      </form>
+
+      <p class="login-note">Har du ikke en bruger? <a class="login-home-link" href="opretbruger.html">Opret bruger</a></p>
+      <a class="login-home-link" href="vejrapp.html">← Tilbage til forsiden</a>
+    </section>
+  </main>
+</body>
+</html>

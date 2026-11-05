@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Opret en bruger på MitVejr.">
+  <title>Opret bruger – MitVejr</title>
+  <link rel="stylesheet" href="vejrapp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!--header-->
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="vejrapp.html" aria-label="MitVejr hjem">
+        <span class="brand-icon" aria-hidden="true">☁</span>
+        <span class="brand-name">MitVejr</span>
+      </a>
+      <a class="login-button" href="logind.html">Log ind</a>
+    </div>
+  </header>
+
+  <!--log ind-->
+
+  <main class="login-page">
+    <section class="card login-card signup-card">
+      <p class="eyebrow">Bliv en del af MitVejr</p>
+      <h1 class="section-title">Opret bruger</h1>
+      <p class="login-description">Opret en bruger for at få personlige tøjforslag til vejret.</p>
+
+      <!--opret email, adgangskode og gentag adgangskode-->
+
+      <form class="login-form" id="signup-form">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="dig@eksempel.dk" required>
+
+        <label for="password">Adgangskode</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Mindst 8 tegn" required>
+
+        <label for="confirm-password">Gentag adgangskode</label>
+        <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" minlength="8" placeholder="Gentag adgangskode" required>
+        
+        <!--opret kuldefølsomhed-->
+
+        <label for="cold-sensitivity">Hvor let fryser du?</label>
+        <select id="cold-sensitivity" name="cold-sensitivity" required>
+          <option value="rarely">Jeg fryser sjældent</option>
+          <option value="sometimes">Jeg fryser nogle gange</option>
+          <option value="easily">Jeg fryser let</option>
+          <option value="very-easily">Jeg fryser meget</option>
+        </select>
+
+        <h2 class="preference-heading">Dine vejrpræferencer</h2>
+        <p class="preference-description">Brug dem til at tilpasse tøjforslagene til dig.</p>
+
+        <label for="preferred-city">By, du vil se vejret for</label>
+        <input id="preferred-city" name="preferred-city" type="text" autocomplete="address-level2" placeholder="F.eks. Kolding">
+
+        <label for="clothing-style">Hvilken tøjstil foretrækker du?</label>
+        <select id="clothing-style" name="clothing-style">
+          <option value="practical">Praktisk og behageligt</option>
+          <option value="classic">Klassisk</option>
+          <option value="sporty">Sporty</option>
+          <option value="simple">Enkelt og let</option>
+        </select>
+
+        <label for="outfit-priority">Hvad skal tøjforslaget prioritere?</label>
+        <select id="outfit-priority" name="outfit-priority">
+          <option value="warmth">At holde mig varm</option>
+          <option value="layers">Tøj i flere lag</option>
+          <option value="rain">Beskyttelse mod regn</option>
+          <option value="comfort">Komfort og bevægelsesfrihed</option>
+        </select>
+
+        <fieldset class="preference-options">
+          <legend>Hvad laver du typisk udendørs?</legend>
+          <label><input type="checkbox" name="activities" value="walking"> Går ture</label>
+          <label><input type="checkbox" name="activities" value="cycling"> Cykler</label>
+          <label><input type="checkbox" name="activities" value="commuting"> Pendler</label>
+          <label><input type="checkbox" name="activities" value="outdoor-work"> Arbejder udendørs</label>
+        </fieldset>
+
+        <label class="preference-checkbox">
+          <input type="checkbox" name="rain-reminder" value="yes">
+          Giv mig besked, når det ser ud til at regne
+        </label>
+
+        <!--opret bruger-knap-->
+
+        <button class="primary-button" type="submit">Opret bruger</button>
+      </form>
+
+      <p class="login-note" id="signup-message" role="status" aria-live="polite"></p>
+      <p class="preference-description">Præferencer gemmes på serveren. Kontooprettelse og login er endnu ikke tilsluttet.</p>
+      <!--link hvis brugeren allerede har en konto-->
+      <a class="login-home-link" href="logind.html">Har du allerede en bruger? Log ind</a>
+    </section>
+  </main>
+
+  <script src="opretbruger.js"></script>
+</body>
+</html>
